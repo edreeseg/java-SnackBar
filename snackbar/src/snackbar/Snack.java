@@ -5,10 +5,10 @@ public class Snack {
     private int id;
     private String name;
     private int quantity;
-    private BigDecimal cost;
+    private double cost;
     private int vendingID;
 
-    public Snack(String name, int quantity, BigDecimal cost, int vendingID){
+    public Snack(String name, int quantity, double cost, int vendingID){
         maxId++;
         id = maxId;
         this.name = name;
@@ -28,7 +28,15 @@ public class Snack {
     public void buySnack(int quantity){
         this.quantity -= quantity;
     }
-    public BigDecimal getTotalCost(int quantity){
+    public double getTotalCost(int quantity){
         return this.cost * quantity;
+    }
+
+    @Override
+    public String toString(){
+        return "name: " + name + "\n" +
+                "quantity: " + quantity + "\n" +
+                "cost: " + cost + "\n" +
+                "vending: " + vendingID + "\n";
     }
 }

@@ -4,18 +4,18 @@ public class Customer {
     private static int maxId = 0;
     private int id;
     private String name;
-    private BigDecimal cashOnHand;
+    private double cashOnHand;
 
-    Customer(String name, BigDecimal cashOnHand){
+    Customer(String name, double cashOnHand){
         maxId++;
         id = maxId;
         this.name = name;
         this.cashOnHand = cashOnHand;
     }
-    public void addCash(BigDecimal amount){
+    public void addCash(double amount){
         this.cashOnHand += amount;
     }
-    public void buyGivenCashUsed(BigDecimal amount){
+    public void buyGivenCashUsed(double amount){
         this.cashOnHand -= amount;
     }
     public String getName(){
@@ -24,7 +24,7 @@ public class Customer {
     public void setName(String name){
         this.name = name;
     }
-    public BigDecimal getCashOnHand(){
+    public double getCashOnHand(){
         return this.cashOnHand;
     }
 }
